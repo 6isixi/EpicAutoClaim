@@ -29,5 +29,5 @@ jobs:
         run: |
           echo "$AUTH_JSON" | tr -d '\r' > $GITHUB_WORKSPACE/device_auths.json
           sed -i 's/true/false/g' config.json
-          npm i 
+          npm install
           npm start
