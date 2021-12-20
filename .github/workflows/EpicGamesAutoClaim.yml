@@ -28,6 +28,6 @@ jobs:
           AUTH_JSON: ${{ secrets.AUTH_JSON }}
         run: |
           echo "$AUTH_JSON" | tr -d '\r' > $GITHUB_WORKSPACE/data/device_auths.json
-          sed -i '' $GITHUB_WORKSPACE/data/config.json
+          
           npm install
           npm start
