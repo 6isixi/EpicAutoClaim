@@ -26,8 +26,9 @@ jobs:
       - name: Run
         env:
           AUTH_JSON: ${{ secrets.AUTH_JSON }}
+          CONFIG: ${{ secrets.CONFIG }}
         run: |
           echo "$AUTH_JSON" | tr -d '\r' > $GITHUB_WORKSPACE/data/device_auths.json
-          rm $GITHUB_WORKSPACE/data/config.example.json $GITHUB_WORKSPACE/data/config.json
+          echo "$CONFIG" | tr -d '\r' > $GITHUB_WORKSPACE/data/config.json
           npm install
           npm start
